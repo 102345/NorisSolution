@@ -1,0 +1,143 @@
+﻿<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+
+@model Noris.Contrato.Presentation.ViewModels.ContratoCompraVendaViewModel
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 class="modal-title">Edita Contrato</h4>
+        </div>
+        <div class="modal-body">
+
+
+
+            @using (Html.BeginForm("AtualizarContrato", "Contrato", FormMethod.Post, new { enctype = "multipart/form-data", role = "form", id = "frmAtualizarContrato", @class = "form-horizontal" }))
+
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary()
+
+            <div class="col-xs-12">
+
+                <div class="form-group">
+                    Dados do Contrato
+                </div>
+
+
+                @Html.HiddenFor(model => model.Id, new { @id = "hdId" })
+
+                <div class="form-group">
+                    <label for="txtChassi" class="form-label">Cliente</label>
+                    @Html.TextBoxFor(model => model.NomeCliente, new { placeholder = "Cliente", @class = "form-control", @id = "txtCliente" })
+
+                </div>
+
+                <div class="form-group">
+                    <label for="optTipo" class="form-label">Tipo</label>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="optVenda" class="form-label">Venda</label>
+                        @Html.RadioButtonFor(model => model.TipoContrato, "Venda", new { @id = "optVenda", @checked = "checked", @name = "optVenda", @value = "Venda" })
+                        <label for="optCompra" class="form-label">Compra</label>
+                        @Html.RadioButtonFor(model => model.TipoContrato, "Compra", new { @id = "optCompra", @name = "optCompra", @value = "Compra" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtNroPassageiros" class="form-label">Qtde Negociada</label>
+                    @Html.TextBoxFor(model => model.QtdeNegociada, new { placeholder = "Qtde Negociada", @class = "form-control", @id = "txtQtdeNegociada" })
+
+                </div>
+
+                <div class="form-group">
+                    <label for="txtCor" class="form-label">Valor Negociado (R$)</label>
+                    @Html.TextBoxFor(model => model.ValorNegociado, new { placeholder = "Valor Negociado", @class = "form-control", @id = "txtValorNegociado" })
+
+                </div>
+
+                <div class="form-group">
+                    <label for="txtMesAno" class="form-label">Mês/Ano</label>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="col-md-2">
+                            @Html.TextBoxFor(model => model.Mes, new { placeholder = "Mês", @class = "form-control", @id = "txtMes" })
+                        </div>
+                        <div class="col-md-2">
+                            /
+                        </div>
+                        <div class="col-md-2">
+                            @Html.TextBoxFor(model => model.Ano, new { placeholder = "Ano", @class = "form-control", @id = "txtAno" })
+                        </div>
+                        <div class="col-md-6">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="txtDuracaoMes" class="form-label">Duração (Meses)</label>
+                    @Html.TextBoxFor(model => model.DuracaoMes, new { placeholder = "Duração (Mês)", @class = "form-control", @id = "txtDuracaoMes" })
+                </div>
+
+
+                <div class="form-group">
+                    <label for="txtDuracaoMes" class="form-label">Arquivo</label>
+                    @Html.TextBoxFor(model => model.Arquivo, new { placeholder = "Arquivo", @class = "form-control", @id = "txArquivo" , @readonly = "readonly" })
+                </div>
+
+
+                <div class="form-group">
+                    <label for="txtDuracaoMes" class="form-label">Arquivo Selecionado</label>
+                    @Html.TextBox("ArquivoSelecionado", "", new { placeholder = "Arquivo Selecionado", @class = "form-control", @id = "txtArquivo", @type = "file" })
+                </div>
+
+            </div>
+
+                <div class="modal-footer">
+
+                    <table>
+                        <tr>
+
+                            <td width="600px;">
+                                &nbsp;
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary" name="OK" value="OK">OK</button>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+
+
+            }
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
