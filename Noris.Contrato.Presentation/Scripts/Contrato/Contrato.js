@@ -5,6 +5,14 @@
 });
 
 
+$(".processarContrato").click(function () {
+    $("#modProcessarContrato").load("/Contrato/ExibirJanelaProcessaContrato", function () {
+        $("#modProcessarContrato").modal();
+    })
+});
+
+
+
 $(".editarContrato").click(function () {
     var id = $(this).attr("data-id");
     $("#modAtualizarContrato").load("/Contrato/ExibirJanelaEditaContrato/" + id, function () {

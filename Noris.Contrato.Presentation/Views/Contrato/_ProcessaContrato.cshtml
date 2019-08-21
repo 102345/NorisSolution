@@ -1,0 +1,46 @@
+﻿
+@model Noris.Contrato.Presentation.ViewModels.ContratoCompraVendaViewModel
+
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 class="modal-title">Processamento de contratos</h4>
+        </div>
+        <div class="modal-body">
+
+            Os contratos estão sendo processados . Aguarde....
+
+            @*@using (Html.BeginForm("ExcluirContrato", "Contrato", FormMethod.Post, new { enctype = "multipart/form-data", role = "form", id = "frmConfirmaExclusaoContrato", @class = "form-horizontal" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.HiddenFor(model => model.Id, new { @id = "hdId" })*@
+
+                <div class="modal-footer">
+
+                    <table>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+
+            @*}*@
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+

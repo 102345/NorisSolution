@@ -2,8 +2,11 @@
 using Noris.Contrato.Model;
 using Noris.Contrato.Presentation.ViewModels;
 using Noris.Contrato.Service.Interface;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -160,6 +163,38 @@ namespace Noris.Contrato.Presentation.Controllers
             return RedirectToAction("ListaContratos", "Contrato");
 
         }
+
+
+
+        public PartialViewResult ExibirJanelaProcessaContrato()
+        {
+            var teste = "ABC";
+           var modelVM = new ContratoCompraVendaViewModel();
+
+            var t = Task.Run(() => {
+
+                Process myProcess = new Process();
+
+                try
+                {
+                    myProcess.StartInfo.UseShellExecute = false;
+                    // You can start any process, HelloWorld is a do-nothing example.
+                    myProcess.StartInfo.FileName = "C:\\Program Files\\Pencil\\Pencil.exe";
+                    myProcess.StartInfo.CreateNoWindow = true;
+                    myProcess.Start();
+                }
+                catch (Exception ex)
+                {
+                }
+            });
+
+
+
+            return PartialView("_ProcessaContrato",modelVM);
+
+
+        }
+
 
 
 

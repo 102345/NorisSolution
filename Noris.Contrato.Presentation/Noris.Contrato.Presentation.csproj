@@ -65,9 +65,11 @@
       <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.5.1\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -200,6 +202,7 @@
     <Content Include="Views\Contrato\_ExcluiContrato.cshtml" />
     <Content Include="Views\Contrato\_PesquisaContrato.cshtml" />
     <Content Include="Views\Contrato\ListaFiltradaContratos.cshtml" />
+    <Content Include="Views\Contrato\_ProcessaContrato.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
