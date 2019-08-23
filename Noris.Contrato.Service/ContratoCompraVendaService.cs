@@ -31,6 +31,11 @@ namespace Noris.Contrato.Service
             _contratoCompraVendaRepository.Remove(_contratoCompraVendaRepository.GetById(id));
         }
 
+        public bool GravarContratosLiquidos()
+        {
+            return _contratoCompraVendaRepository.GravarContratosLiquido();
+        }
+
         public void InserirContratoCompraVenda(ContratoCompraVenda contratoCompraVenda)
         {
             _contratoCompraVendaRepository.Add(contratoCompraVenda);

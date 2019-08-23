@@ -11,5 +11,7 @@ namespace Noris.Contrato.Service.Interface
         void InserirContratoCompraVenda(ContratoCompraVenda ContratoCompraVenda);
         void AtualizarContratoCompraVenda(ContratoCompraVenda ContratoCompraVenda);
         void ExcluirContratoCompraVenda(int id);
+
+        bool GravarContratosLiquidos();
     }
 }

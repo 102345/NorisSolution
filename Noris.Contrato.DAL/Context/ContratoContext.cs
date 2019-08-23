@@ -7,7 +7,7 @@ namespace Noris.Contrato.DAL.Context
     public class ContratoContext :DbContext
     {
         public DbSet<ContratoCompraVenda> ContratosCompraVenda { get; set; }
-
+        public DbSet<ContratoLiquido> ContratosLiquido { get; set; }
 
         public ContratoContext() : base("ContratoContext")
         {

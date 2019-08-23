@@ -7,7 +7,7 @@ namespace Noris.Contrato.Teste
     [TestClass]
     public class TesteContrato
     {
-        [TestMethod]
+        //[TestMethod]
         public void ListarContratos()
         {
             var contratos = new ContratoCompraVendaService().ListarContratoCompraVendas();
@@ -15,13 +15,22 @@ namespace Noris.Contrato.Teste
             Assert.AreNotEqual(null, contratos);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void InserirContrato()
         {
 
         }
 
-}
+
+        [TestMethod]
+        public void GravarContratoLiquidoTest()
+        {
+            bool ret = new ContratoCompraVendaService().GravarContratosLiquidos();
+
+            Assert.AreEqual(true, ret);
+        }
+
+    }
 
 
   

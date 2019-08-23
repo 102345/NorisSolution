@@ -4,5 +4,6 @@ namespace Noris.Contrato.DAL.Interface.Repositories
 {
     public interface IContratoCompraVendaRepository : IRepositoryBase<ContratoCompraVenda>
     {
+        bool GravarContratosLiquido();
     }
 }

@@ -31,7 +31,7 @@ namespace Noris.Contrato.Presentation.Controllers
         public ActionResult ListaContratos()
         {
 
-            var modelVM = Mapper.Map<IEnumerable<ContratoCompraVenda>, 
+            var modelVM = Mapper.Map<IEnumerable<ContratoCompraVenda>,
                             IEnumerable<ContratoCompraVendaViewModel>>(_contratoCompraVendaService.ListarContratoCompraVendas());
 
             return View(modelVM);
@@ -134,8 +134,8 @@ namespace Noris.Contrato.Presentation.Controllers
         {
 
             if (ModelState.IsValid)
-            {   
-                if(ArquivoSelecionado != null)
+            {
+                if (ArquivoSelecionado != null)
                 {
                     using (var binaryReader = new BinaryReader(ArquivoSelecionado.InputStream))
                     {
@@ -151,9 +151,9 @@ namespace Noris.Contrato.Presentation.Controllers
 
                 _contratoCompraVendaService.InserirContratoCompraVenda(model);
 
-           
+
                 ModelState.Clear();
-              
+
                 return RedirectToAction("ListaContratos", "Contrato");
 
             }
@@ -168,10 +168,11 @@ namespace Noris.Contrato.Presentation.Controllers
 
         public PartialViewResult ExibirJanelaProcessaContrato()
         {
-            var teste = "ABC";
-           var modelVM = new ContratoCompraVendaViewModel();
 
-            var t = Task.Run(() => {
+            var modelVM = new ContratoCompraVendaViewModel();
+
+            var t = Task.Run(() =>
+            {
 
                 Process myProcess = new Process();
 
@@ -179,18 +180,25 @@ namespace Noris.Contrato.Presentation.Controllers
                 {
                     myProcess.StartInfo.UseShellExecute = false;
                     // You can start any process, HelloWorld is a do-nothing example.
-                    myProcess.StartInfo.FileName = "C:\\Program Files\\Pencil\\Pencil.exe";
+                    string param = "teste";
+
+                    //string pathService = string.Format("C:\\projetos\\Noris\\NorisSolution\\Noris.Contrato.WindowsService\\bin\\Debug\\Noris.Contrato.WindowsService.exe /{0}", param);
+
+                    string pathService = "C:\\projetos\\Noris\\NorisSolution\\Noris.Contrato.WindowsService\\bin\\Debug\\Noris.Contrato.WindowsService.exe";
+
+                    myProcess.StartInfo.FileName = pathService;
                     myProcess.StartInfo.CreateNoWindow = true;
                     myProcess.Start();
                 }
                 catch (Exception ex)
                 {
+                    string msg = ex.Message;
                 }
             });
 
 
 
-            return PartialView("_ProcessaContrato",modelVM);
+            return PartialView("_ProcessaContrato", modelVM);
 
 
         }
@@ -249,7 +257,7 @@ namespace Noris.Contrato.Presentation.Controllers
 
                 _contratoCompraVendaService.AtualizarContratoCompraVenda(contrato);
 
-          
+
 
                 return RedirectToAction("ListaContratos", "Contrato");
 

@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noris.Contrato.Presentation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noris.Contrato.WindowsService", "Noris.Contrato.WindowsService\Noris.Contrato.WindowsService.csproj", "{8EB6A623-8079-48F7-8B33-92B836C38E26}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{BC0C7A15-3C83-42EB-BBD3-DDDEF2F4C8B8}"
+	ProjectSection(SolutionItems) = preProject
+		DataBase\sp_carga_contrato_liquido.sql = DataBase\sp_carga_contrato_liquido.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

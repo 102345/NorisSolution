@@ -18,12 +18,29 @@ namespace Noris.Contrato.WindowsService.Integration
         {
             Task.Run(() =>
             {
-                while (true)
+                //while (true)
+                //{
+
+                //    System.Console.WriteLine("Processamento da Rotina");
+                //    Thread.Sleep(TimeSpan.FromSeconds(5));
+                //}
+
+                var contratoService = new Service.ContratoCompraVendaService();
+
+                bool ret = contratoService.GravarContratosLiquidos();
+
+                if (ret)
                 {
-                    //Gera relatorio
-                    System.Console.WriteLine("Processamento da Rotina");
-                    Thread.Sleep(TimeSpan.FromSeconds(5));
+                    System.Console.WriteLine("Processamento da carga de contratos liquido feito");
                 }
+                else
+                {
+                    System.Console.WriteLine("Problemas de geração de carga de contratos liquido");
+                }
+                
+                this.Stop(hostControl);
+               
+
             }, _cancellationTokenSource.Token);
             return true;
         }
