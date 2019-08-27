@@ -180,7 +180,7 @@ namespace Noris.Contrato.Presentation.Controllers
                 {
                     myProcess.StartInfo.UseShellExecute = false;
                     // You can start any process, HelloWorld is a do-nothing example.
-                    string param = "teste";
+                    //string param = "teste";
 
                     //string pathService = string.Format("C:\\projetos\\Noris\\NorisSolution\\Noris.Contrato.WindowsService\\bin\\Debug\\Noris.Contrato.WindowsService.exe /{0}", param);
 
