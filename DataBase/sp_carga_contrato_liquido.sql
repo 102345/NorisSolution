@@ -23,7 +23,8 @@ BEGIN
 			       NomeCliente,
 				   TipoContrato,
 				   QtdeNegociada,
-				   ValorNegociado,
+				
+				ValorNegociado,
 				   ValorNegociado*0.1,
 				   ValorNegociado - ValorNegociado*0.1
 				   FROM ContratoCompraVenda
